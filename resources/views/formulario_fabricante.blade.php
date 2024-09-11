@@ -13,6 +13,9 @@
 
     <h1>Formulário de Fabricante</h1>
     <form action="{{ url('fabricante/salvar') }}" method="POST" enctype="multipart/form-data">
+        
+        @csrf
+        
         <div class="form-group">
             <label for="id">ID</label>
             <input readonly type="text" class="form-control" id="id" name="id" value="{{ $fabricante->id }}">

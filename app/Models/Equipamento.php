@@ -26,6 +26,6 @@ class Equipamento extends Model
     // Relacionamento com Maquina (um Equipamento pertence a uma Maquina)
     public function maquina()
     {
-        return $this->belongsTo(Maquina::class, 'pat_maquina', 'patrimonio');
+        return $this->belongsTo(Maquina::class, 'id_maquina', 'id');
     }
 }

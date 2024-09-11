@@ -33,6 +33,9 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/">Inicio</a>
             </li>
+
+            <!-- Conteúdo exibido apenas para usuários autenticados -->
+            @auth
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/usuario/listar">Usuários</a>
             </li>
@@ -49,12 +52,24 @@
               <a class="nav-link active" aria-current="page" href="/equipamento/listar">Equipamentos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/login/logout">Sair</a>
+              <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="btn btn-link nav-link active" aria-current="page">
+                  Sair
+                </button>
+              </form>
             </li>
+            @endauth
+
+            <!-- Conteúdo exibido apenas para visitantes (não autenticados) -->
+            @guest
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/login">Entrar</a>
+            </li>
+            @endguest
+
           </ul>
-
         </div>
-
       </div>
     </div>
   </nav>

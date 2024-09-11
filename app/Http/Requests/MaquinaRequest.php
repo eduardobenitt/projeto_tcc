@@ -32,6 +32,7 @@ class MaquinaRequest extends FormRequest
     {
         return[
             'patrimonio.required' => 'O patrimônio é obrigatório',
+            'id_fabricante.required'=>'O Fabricante é obrigatório',
             'id_fabricante.exists'=> 'Fabricante não encontrado',
             'id_usuario.exists'=> 'O usuário não encontrado'
         ];

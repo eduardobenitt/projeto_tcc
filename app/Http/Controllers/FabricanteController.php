@@ -31,4 +31,15 @@ class FabricanteController extends Controller
         $fabricante->save();
         return redirect('fabricante/listar');
     }
+
+    function editar($id){
+        $fabricante = Fabricante::find($id);
+        return view("formulario_fabricante", compact('fabricante'));
+    }
+
+    function excluir($id){
+        $fabricante = Fabricante::find($id);
+        $fabricante->delete();
+        return redirect('fabricante/listar');
+    }
 }

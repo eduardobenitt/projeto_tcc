@@ -23,4 +23,9 @@ class Maquina extends Model
         return $this->belongsTo(Usuario::class, 'id_usuario');
     }
 
+    public function equipamento()
+    {
+        return $this->hasMany(Equipamento::class, 'id_maquina');
+    }
+
 }
